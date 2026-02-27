@@ -1,0 +1,71 @@
+h1 {
+    text-align: center;
+}
+/* reset para zerar margens e padding de toda a pagina */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    display: grid; /* transforma a section em um cotainer de grade */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; /* espaço entre os cards */
+}
+
+article {
+    border: 1px solid #ddd;
+    border-radius: 6px; /* bordas com canto arredondado */
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+article:hover {
+    transform: translateY(-5px); /* eleva o card ao passar o mouse */
+}
+
+article:hover {
+    transform: scale(1.03); /* efeito ao passar o mouse */
+}
+
+/* Imagem dentro do card */
+article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+/* Título */
+article h2 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+/* Texto */
+article p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.catalago {
+
+}
+
+.catalago ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.catalago li {
+    margin: 0 15px;
+}
