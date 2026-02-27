@@ -1,0 +1,41 @@
+h1 {
+    text-align: center; /* Centraliza o título */
+}
+body {
+    background-color: #000000;
+    margin: 0 auto; /* Remove margem padrão */
+}
+a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: white; /* Define a cor do texto dos links */
+}
+.menu {
+    background-color: rgb(32, 0, 91);
+    padding: 3px; /* Adiciona um pouco de espaço interno ao menu */
+    width: 100%; /* Ocupa toda a largura */
+    box-sizing: border-box; /* Inclui padding na largura total */
+    margin: 0; /* Remove margem padrão */
+}
+.menu ul {
+    list-style-type: none; /* Remove os marcadores da lista */
+    padding: 0; /* Remove o preenchimento */
+    display: flex; /* Exibe os itens em linha */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+
+}
+.menu li {
+    margin: 0 15px; /* Adiciona espaço entre os itens */
+    color: white; /* Define a cor do texto dos itens do menu */
+}
+.external-link {
+display: block; /* Exibe o link como um bloco para facilitar a centralização */
+margin: 0 auto; /* Centraliza o link horizontalmente */
+width: fit-content; /* ou uma largura fixa */
+margin-top: 20px; /* Adiciona um pouco de espaço acima do link */
+}
+
+.rodape {
+    text-align: center;
+    color: white;
+    margin-top: 900px;    
+}
