@@ -1,71 +1,148 @@
-h1 {
-    text-align: center;
-}
-/* reset para zerar margens e padding de toda a pagina */
-body {
-    font-family: Arial, sans-serif;
+/* remove margens e padding que vem por padrão */
+* {
     margin: 0;
     padding: 0;
 }
 
-main {
-    padding: 20px;
+header {
+    display: flex;
+    align-items: center; /* centraliza o conteúdo verticalmente */
+    padding: 30px; /* espaçamento interno do header */
 }
 
-section {
-    display: grid; /* transforma a section em um cotainer de grade */
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px; /* espaço entre os cards */
-}
-
-article {
-    border: 1px solid #ddd;
-    border-radius: 6px; /* bordas com canto arredondado */
-    padding: 15px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-article:hover {
-    transform: translateY(-5px); /* eleva o card ao passar o mouse */
-}
-
-article:hover {
-    transform: scale(1.03); /* efeito ao passar o mouse */
-}
-
-/* Imagem dentro do card */
-article img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 6px;
-}
-
-/* Título */
-article h2 {
-    font-size: 1.2rem;
-    margin: 10px 0;
-    color: #333;
-}
-
-/* Texto */
-article p {
-    font-size: 0.95rem;
-    color: #555;
+header svg {
+    width: 200px; /* tamanho do logo */
+    height: auto; /* mantém a proporção do logo */
+    display: block; /* remove espaço em branco abaixo do logo */
+    margin: 0 auto; /* centraliza o logo horizontalmente */
+    color: #ffffff; /* cor do logo */
 }
 
 .catalago {
-
+    padding-left: 85px; /* espaçamento interno do menu */
+    font-size: 0.85rem; /* tamanho da fonte do menu */
 }
 
 .catalago ul {
     list-style-type: none;
     padding: 0;
     display: flex;
-    justify-content: center;
+    justify-content: left;
 }
 
+
 .catalago li {
-    margin: 0 15px;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.catalago a {
+    text-decoration: none;
+    color: #ffffff; /* cor dos links do menu */
+    width: 100%;
+    text-align: center;
+}
+.catalago input {
+    padding:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           10px;
+    border-radius: 3px;
+    border: none;
+    background-color: #333; /* cor de fundo do campo de busca */
+    color: #ffffff; /* cor do texto do campo de busca */
+}
+
+/* Remove sublinhado dos links dos cards */
+section a {
+    text-decoration: none;
+    color: inherit; /* mantém a cor do texto dentro do card */ 
+}
+
+h2.title {
+    color: #ffffff; /* cor do título */
+    margin-bottom: 16px; /* espaçamento abaixo do título */
+}   
+
+
+/* reset para zerar margens e padding de toda a pagina */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #15171e;
+}
+
+/* estilo para o main, onde ficam os cards */
+main {
+    padding: 75px; /* espaçamento interno do main */
+}
+
+/* Estilo para a seção de cards */
+section.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 320px));
+    gap: 16px; /* espaço entre os cards */
+}
+
+/* card */
+article {
+    border-radius: 7px 7px 3px 3px; /* bordas arredondadas umas pouco mais acentuadas no topo */
+    padding: 0;
+    background-color: #15171e;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+    box-sizing: border-box;
+    transition: all 0.3s ease; /* animação suave para todas as mudanças */
+    height: 100%; /* garante que o card ocupe toda a altura disponível */
+}
+
+/* Imagem parada */
+article figure {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 220px;
+}
+
+/* Conteúdo do card */
+.card-content {
+    background-color: #15171e;
+    padding: 24px;
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* alinha o texto à esquerda */
+}
+
+/* Só o conteúdo se move */
+article:hover .card-content {
+    background-color: #0d0f1727;
+    transform: translateY(-3px); /* move meu conteudo para cima */
+}
+
+/* Imagem dentro do card */
+article img {
+    width: 100%; /*ocupa toda a largura do card */
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0; /* bordas arredondadas apenas no topo */
+}
+
+/* Título do card*/
+article h2 {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+/* Texto do card */
+article p {
+    font-size: 0.83rem;
+    color: #ffb400;
+}
+
+/* Descrição do card */
+article .descricao {
+    color: rgba(255, 255, 255, 0.545);
+    font-size: 0.79rem;
+    padding-top: 7px;
 }

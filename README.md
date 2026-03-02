@@ -1,1 +1,2 @@
-# praticas_curso_fullstack
+<<<<<<< HEAD
+# praticas_curso_fullstack  
