@@ -3,87 +3,116 @@
     margin: 0;
     padding: 0;
 }
-
 header {
     display: flex;
-    align-items: center; /* centraliza o conteúdo verticalmente */
     padding: 30px; /* espaçamento interno do header */
+    justify-content: center;
 }
-
 header svg {
-    width: 200px; /* tamanho do logo */
-    height: auto; /* mantém a proporção do logo */
-    display: block; /* remove espaço em branco abaixo do logo */
-    margin: 0 auto; /* centraliza o logo horizontalmente */
+    width: 200px; /* tamanho do logo 'battle.net'*/
+    height: auto; /* mantém a proporção do logo 'battle.net' */
     color: #ffffff; /* cor do logo */
 }
-
 .catalago {
     padding-left: 85px; /* espaçamento interno do menu */
     font-size: 0.85rem; /* tamanho da fonte do menu */
+    font-family: Arial, sans-serif;
 }
-
-.catalago ul {
-    list-style-type: none;
-    padding: 0;
+.catalago .menu {
+    list-style-type: none; /* remove os marcadores da lista */
     display: flex;
-    justify-content: left;
 }
-
-
-.catalago li {
-    margin-right: 15px;
+.menu > li {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #15171e;
+    border-radius: 4px;
+}
+/* */
+.menu > li:hover {
+    background-color: #0d0f17;  /* cor ao passar o mouse */
+}
+.catalago .search-menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end; /* coloca o input para a direita */
+    align-items: center; /* centraliza o input verticalmente */
+    margin: 0 85px 0 auto;
+    padding: 0; /* remove padding do item de busca */
 }
 
+.catalago .search {
+    list-style-type: none;
+    padding: 0; /* remove padding do item de busca */
+    display: flex; 
+    border-radius: 4px; /* bordas arredondadas para o item de busca */
+}
+.catalago input {
+    border-radius: 7px;
+    border: 1px solid transparent; /* remove a borda padrão do input */
+    background-color: #15171e; /* cor de fundo do campo de busca */
+    width: 250px; /* largura do campo de busca */
+    height: 35px;
+    padding: 10px 50px; /* espaçamento interno do campo de busca */
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* deixando o texto do input 'pesquisa' ficar meio cinza */
+.catalago input::placeholder {
+    color: rgba(255, 255, 255, 0.6); /* placeholder com opacidade */
+}
+/* quando eu passar ou deixar mouse no input 'pesquisa', ele vai ficar com campo dentro mais azul */
+.catalago input:hover {
+    background-color: #0d0f17;
+}
 .catalago a {
     text-decoration: none;
     color: #ffffff; /* cor dos links do menu */
-    width: 100%;
-    text-align: center;
+    width: 100%; /* faz o link ocupar toda a largura do item */
+    padding: 20px 35px; /* espaçamento interno. no caso o tamanho total dos links do menu */
+    display: block; /* faz o link ocupar todo o espaço */
+    text-align: center; /* centraliza o texto */
 }
-.catalago input {
-    padding:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           10px;
-    border-radius: 3px;
-    border: none;
-    background-color: #333; /* cor de fundo do campo de busca */
-    color: #ffffff; /* cor do texto do campo de busca */
+/* quando eu passar ou deixar mouse no input 'pesquisa', o texto vai ficar mais branco */
+.catalago input:hover::placeholder {
+    color: rgba(255, 255, 255, 0.9); /* placeholder mais branco ao passar o mouse */
 }
-
-/* Remove sublinhado dos links dos cards */
-section a {
-    text-decoration: none;
-    color: inherit; /* mantém a cor do texto dentro do card */ 
+/* quando eu clicar no input 'pesquisa', ele vai ficar com campo dentro mais azul */
+.catalago input:focus {
+    background-color: #0d0f17;
+    outline: none; /* remove a borda padrão ao focar */
 }
-
+/* */
+.catalago input:focus::placeholder {
+    color: rgba(255, 255, 255, 0.9); /* placeholder mais branco ao clicar */
+}
+/* */
 h2.title {
     color: #ffffff; /* cor do título */
-    margin-bottom: 16px; /* espaçamento abaixo do título */
+    margin: 25px 0 20px; /* espaçamento abaixo do título */
+
 }   
-
-
+/* Remove sublinhado dos card dos jogos e mantém a cor do texto */
+section a {
+    text-decoration: none; /* remove sublinhado dos links dentro dos cards */
+}
 /* reset para zerar margens e padding de toda a pagina */
 body {
     font-family: Arial, sans-serif;
     background-color: #15171e;
 }
-
 /* estilo para o main, onde ficam os cards */
 main {
-    padding: 75px; /* espaçamento interno do main */
+    padding: 0 75px 75px 75px; /* espaçamento interno do main */
 }
-
 /* Estilo para a seção de cards */
 section.cards-container {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 320px));
-    gap: 16px; /* espaço entre os cards */
+    grid-template-columns: repeat(2, minmax(0, 320px)); /* 3 colunas de largura fixa, mas que podem encolher se necessário */
+    gap: 24px; /* espaço entre os cards */
 }
-
 /* card */
-article {
+.card {
     border-radius: 7px 7px 3px 3px; /* bordas arredondadas umas pouco mais acentuadas no topo */
     padding: 0;
     background-color: #15171e;
@@ -94,55 +123,90 @@ article {
     transition: all 0.3s ease; /* animação suave para todas as mudanças */
     height: 100%; /* garante que o card ocupe toda a altura disponível */
 }
-
 /* Imagem parada */
-article figure {
+.card figure {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 220px;
 }
-
 /* Conteúdo do card */
 .card-content {
     background-color: #15171e;
     padding: 24px;
-    flex: 1; 
+    flex: 1; /* faz o conteúdo ocupar o espaço restante do card */
     display: flex;
     flex-direction: column;
     text-align: left; /* alinha o texto à esquerda */
 }
 
-/* Só o conteúdo se move */
-article:hover .card-content {
-    background-color: #0d0f1727;
-    transform: translateY(-3px); /* move meu conteudo para cima */
+.card-content > * {
+    transition: transform 0.3s ease; /* animação suave para o movimento do conteúdo */
 }
-
+.card:hover .card-content > * {
+    transform: translateY(-3px); /* move apenas textos do conteúdo */
+}
+/* Só o conteúdo se move */
+.card:hover .card-content {
+    background-color: #0d0f1727;
+}
 /* Imagem dentro do card */
-article img {
+.card img {
     width: 100%; /*ocupa toda a largura do card */
     height: 100%;
     display: block;
     object-fit: cover;
     border-radius: 5px 5px 0 0; /* bordas arredondadas apenas no topo */
 }
-
 /* Título do card*/
-article h2 {
+.card h2 {
     font-size: 1.2rem;
     color: #ffffff;
 }
-
 /* Texto do card */
-article p {
+.card p {
     font-size: 0.83rem;
     color: #ffb400;
 }
-
-/* Descrição do card */
-article .descricao {
+/* Descrição do card da aba inicial*/
+.card .descricao {
     color: rgba(255, 255, 255, 0.545);
     font-size: 0.79rem;
     padding-top: 7px;
 }
+.migalhas {
+    list-style-type: none; /* remove os marcadores da lista */
+    display: flex;
+    padding: 10px 85px 20px 85px; /* espaçamento interno das migalhas */
+    margin-top: 30px;
+    font-size: 0.75rem; /* tamanho da fonte das migalhas */
+    font-family: Arial, sans-serif;
+}
+.migalhas a {
+    text-decoration: none;
+    color: #ffffff; /* cor dos links das migalhas */
+}
+
+.migalhas li::after {
+  content: " > ";
+  color: #ffffff;
+  padding: 0 5px; /* espaçamento entre as migalhas */
+}
+.container-compra {
+    display: flex;
+    gap: 100px; /* espaço entre o trailer e as informações */
+}
+.trailler-container {
+    width: 1009px;
+    height: 568px;
+    left: 0px;
+    top: 0px;
+}
+.info-compra .descricao {
+    color: rgba(255, 255, 255, 0.545);
+    font-size: 0.85rem;
+    padding-top: 6px;
+}
+.info-compra h1 {
+    color: #ffffff;
+}   
